@@ -48,22 +48,19 @@
             width: 100%;
             margin-top: 10px;
         }
-        .btn:active {
-            transform: scale(0.98);
-        }
-        /* Style de la fenêtre flottante simulée */
+        /* Fenêtre flottante */
         #floating-menu {
             display: none;
             position: fixed;
-            top: 20%;
+            top: 25%;
             left: 5%;
             right: 5%;
-            background: rgba(30, 30, 30, 0.95);
+            background: rgba(20, 20, 20, 0.98);
             border: 2px solid #00ff00;
             border-radius: 10px;
             padding: 15px;
             z-index: 9999;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
         }
         .floating-header {
             font-weight: bold;
@@ -72,57 +69,48 @@
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
-        #close-btn {
-            background: #ff3333;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Pixel-Triche 🎮</h1>
-        <p>Logiciel de suite garanti 100% sans virus pour tricher chaque jour sur ton téléphone. Ne sortira jamais sur ordinateur.</p>
+        <p>Logiciel de suite sans virus pour tricher chaque jour sur téléphone.</p>
         
-        <div class="status">Statut du Mod: ACTIF ET SÉCURISÉ</div>
+        <div class="status">Statut: PRÊT À L'INJECTION</div>
 
-        <label for="money">Somme d'argent à injecter :</label>
-        <input type="number" id="money" value="999999" style="width: 80%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; text-align: center;">
+        <label for="money">Quantité de pièces à s'attribuer :</label>
+        <input type="number" id="money" value="99999999" style="width: 80%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; text-align: center; font-size: 18px;">
 
-        <button class="btn" onclick="activerCheat()">ACTIVER LE CHEAT MODE</button>
+        <button class="btn" onclick="injecterMenu()">INJECTER LE MOD MENU</button>
         
         <div id="control-panel" style="display:none; margin-top: 20px; border-top: 1px dashed #555; padding-top: 15px;">
-            <p>L'icône flottante est actuellement injectée sur ton écran.</p>
-            <button id="close-site-btn" style="background:#ff3333; color:white; border:none; padding:10px; border-radius:5px; width:100%; font-weight:bold;" onclick="fermerCheat()">[X] RETIRER L'ICÔNE FLOTTANTE</button>
+            <p style="color: #ff3333;">L'icône est bloquée sur ton écran !</p>
+            <button style="background:#ff3333; color:white; border:none; padding:10px; border-radius:5px; width:100%; font-weight:bold; cursor:pointer;" onclick="retirerMenu()">[X] CLIQUER ICI POUR ENLEVER L'ICÔNE</button>
         </div>
     </div>
 
-    <!-- Menu flottant simulé sur la page -->
+    <!-- Menu de triche simulé -->
     <div id="floating-menu">
-        <div class="floating-header">👾 Pixel Cheat Menu v1.0</div>
-        <p>Statut: Injection réussie !</p>
-        <p>Argent disponible: <span id="display-money">0</span> 💰</p>
-        <p style="font-size:12px; color:#aaa;">(Pour fermer cette fenêtre, tu dois obligatoirement retourner sur le site et cliquer sur la croix rouge)</p>
+        <div class="floating-header">⚡ Pixel-Triche Floating Menu</div>
+        <p>Statut: Injection validée avec succès !</p>
+        <p style="font-size: 20px; color: #00ff00;">Pièces illimitées: <span id="display-money">0</span> 💰</p>
+        <p style="font-size:11px; color:#aaa;">(Pour faire disparaître ce menu, retourne obligatoirement sur le site et clique sur la croix rouge)</p>
     </div>
 
     <script>
-        function activerCheat() {
-            var moneyValue = document.getElementById('money').value;
-            document.getElementById('display-money').innerText = moneyValue;
+        function injecterMenu() {
+            var somme = document.getElementById('money').value;
+            document.getElementById('display-money').innerText = somme;
             document.getElementById('floating-menu').style.display = 'block';
             document.getElementById('control-panel').style.display = 'block';
-            alert('Menu injecté ! L\'icône reste active sur ton système tant que tu ne la fermes pas depuis le site.');
+            alert('Lancement du mode triche ! Fenêtre flottante activée.');
         }
 
-        function fermerCheat() {
+        function retirerMenu() {
             document.getElementById('floating-menu').style.display = 'none';
             document.getElementById('control-panel').style.display = 'none';
-            alert('L\'icône a été retirée avec succès.');
+            alert('Menu retiré de l\'écran !');
         }
     </script>
 
